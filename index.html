@@ -56,11 +56,14 @@
 
     .carousel {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      overflow-x: auto;  /* Ativa a rolagem horizontal */
       gap: 20px;
       padding: 10px 0;
       scroll-behavior: smooth;
+      width: 100%;  /* Garante que ocupe toda a largura disponível */
     }
+
     .carousel-item {
       background-color: #ffffff;
       padding: 10px;
@@ -68,14 +71,7 @@
       width: 200px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .carousel-item h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-    .carousel-item p {
-      font-size: 0.9rem;
-      color: #555;
+      flex-shrink: 0;  /* Impede que os itens encolham */
     }
 
     .cards-container {
@@ -84,8 +80,6 @@
       gap: 40px;
       margin-top: 40px;
       margin-bottom: 40px;
-      overflow-x: auto;  /* Habilita a rolagem */
-      width: 100%;
     }
 
     .card {
@@ -162,6 +156,7 @@
       background: #0f9d58;
       color: white;
     }
+
   </style>
   <meta name="description" content="Aprenda a criar documentos profissionais no LaTeX com o curso 'Do Word ao LaTeX sem Sofrer'. Ideal para iniciantes!">
   <meta name="keywords" content="curso LaTeX, aprender LaTeX, documentos LaTeX, LaTeX para iniciantes">
