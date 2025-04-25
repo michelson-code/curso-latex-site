@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento via Pix</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f1f8e9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background-color: #0f9d58;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .payment-info {
+      font-size: 1.2rem;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .payment-info h2 {
+      color: #0f9d58;
+    }
+    .payment-info p {
+      margin-bottom: 20px;
+    }
+    .qr-code {
+      margin-top: 30px;
+    }
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+    }
+    .confirmation-btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #fbbc05;
+      color: #1c1c1c;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .confirmation-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f9d58;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pagamento via Pix</h1>
+  </header>
+
+  <div class="payment-info">
+    <h2>Finalize sua compra!</h2>
+    <p>Para realizar o pagamento, basta realizar a transferência via Pix. Abaixo está o QR Code para facilitar seu pagamento.</p>
+    <p>Após realizar o pagamento, clique no botão "Confirmar Pagamento" para concluir o processo.</p>
+
+    <!-- Exemplo de QR Code (substitua com seu QR Code real) -->
+    <div class="qr-code">
+      <img src="https://via.placeholder.com/200x200.png?text=QR+Code" alt="QR Code Pix">
+    </div>
+
+    <p>Chave Pix: <strong>12345678900@dominio.com</strong></p>
+
+    <!-- Botão de confirmação desabilitado inicialmente -->
+    <button id="confirmPaymentBtn" class="confirmation-btn" disabled onclick="confirmPayment()">Confirmar Pagamento</button>
+  </div>
+
+  <footer>
+    &copy; 2025 - Curso por Bruno Dantas | Powered by LaTeX & Overleaf
+  </footer>
+
+  <script>
+    function confirmPayment() {
+      // Simula o processo de confirmação do pagamento
+      alert("Pagamento confirmado! Redirecionando para o Discord...");
+
+      // Redireciona para o canal do Discord
+      window.location.href = "https://discord.com/invite/seu-canal";  // Altere com o link do seu canal no Discord
+    }
+
+    // Função que habilita o botão após a simulação do pagamento
+    function enableConfirmButton() {
+      document.getElementById("confirmPaymentBtn").disabled = false;
+    }
+
+    // Simulação: após 5 segundos (exemplo), "o pagamento foi processado"
+    setTimeout(enableConfirmButton, 5000);
+  </script>
+
+</body>
+</html>
