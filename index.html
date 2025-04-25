@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_custom.ico">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do Word ao LaTeX sem Sofrer</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #e1f5e4;
+      margin: 0;
+      padding: 0;
+      color: #1c1c1c;
+    }
+    header {
+      background-color: #0f9d58;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3rem;
+    }
+    header h1 img {
+      width: 40px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .pricing {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2d6a4f;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #9e9e9e;
+      font-size: 1.2rem;
+    }
+    .discount {
+      color: #f44336;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .card {
+      width: 250px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .card:nth-child(1) {
+      left: 0;
+      transform: scale(1);
+    }
+
+    .card:nth-child(2) {
+      left: 100px;
+      transform: scale(1.05);
+    }
+
+    .card:nth-child(3) {
+      left: 200px;
+      transform: scale(1.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #fbbc05;
+      color: #1c1c1c;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f9d58;
+      color: white;
+    }
+
+  </style>
+  <meta name="description" content="Aprenda a criar documentos profissionais no LaTeX com o curso 'Do Word ao LaTeX sem Sofrer'. Ideal para iniciantes!">
+  <meta name="keywords" content="curso LaTeX, aprender LaTeX, documentos LaTeX, LaTeX para iniciantes">
+</head>
+<body>
+
+  <header>
+    <h1>
+      <img src="fox-icon.png" alt="Fox Logo" class="logo-overleaf">
+      Do Word ao LaTeX sem Sofrer
+      <img src="overleaf-icon.png" alt="Overleaf" class="logo-overleaf">
+    </h1>
+    <p>Crie documentos elegantes no Overleaf, direto do navegador, mesmo que nunca tenha usado LaTeX!</p>
+  </header>
+
+  <div class="pricing">
+    <p><span class="price">R$ 24,90</span> <span class="old-price">R$ 164,90</span></p>
+    <p class="discount">82% de desconto</p>
+  </div>
+
+  <h2>Conteúdo do Curso</h2>
+
+  <div class="cards-container">
+    <div class="card">
+      <img src="https://preview.redd.it/what-is-the-name-of-this-template-academic-paper-v0-202gbl7urmva1.png?width=663&format=png&auto=webp&s=8c543d1effcec232167d233ac7d1aabb175536ee" alt="Modelo 1">
+      <div class="card-content">
+        <h3>Modelo Acadêmico 1</h3>
+        <p>Texto explicativo sobre o modelo e sua importância no curso.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i1.rgstatic.net/publication/304224881_Modelo_LaTeX_para_teses_e_dissertacoes_em_Programa_de_Pos-Graduacao_construcao_e_avaliacao_de_artefato/links/577d732b08aed39f598f77f0/largepreview.png" alt="Modelo 2">
+      <div class="card-content">
+        <h3>Modelo Acadêmico 2</h3>
+        <p>Texto explicativo sobre o segundo modelo de LaTeX utilizado no curso.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://writelatex.s3.amazonaws.com/published_ver/5647.jpeg?X-Amz-Expires=14400&X-Amz-Date=20250425T030103Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWJBOALPNFPV7PVH5/20250425/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=369693ece384f7af03b07b9dcdce641af9cd64f953f8b044aad69a3ad9f1c105" alt="Modelo 3">
+      <div class="card-content">
+        <h3>Modelo Acadêmico 3</h3>
+        <p>Texto explicativo sobre o terceiro modelo utilizado nas dissertações e teses.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://linktr.ee/7michelson" target="_blank" class="btn">INSCREVA-SE AGORA</a>
+
+  <footer>
+    &copy; 2025 - Curso por Bruno Dantas | Powered by LaTeX & Overleaf
+  </footer>
+
+</body>
+</html>
