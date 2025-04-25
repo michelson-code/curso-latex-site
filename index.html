@@ -28,7 +28,7 @@
       font-size: 1.3rem;
     }
     header h1 img {
-      width: 40px;
+      width: 40px;  /* Ajusta o tamanho das imagens */
       height: auto;
       vertical-align: middle;
       margin-right: 10px;
@@ -52,13 +52,36 @@
       font-weight: bold;
       font-size: 1.3rem;
     }
+    .carousel {
+      display: flex;
+      overflow-x: scroll;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+    }
+    .carousel-item {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .carousel-item p {
+      font-size: 0.9rem;
+      color: #555;
+    }
 
     .cards-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;  /* Centraliza os cartões na página */
+      gap: 40px;  /* Aumenta o espaço entre os cartões */
       margin-top: 40px;
       margin-bottom: 40px;
-      position: relative;
     }
 
     .card {
@@ -69,23 +92,8 @@
       overflow: hidden;
       transform: scale(0.9);
       transition: transform 0.3s ease;
-      position: absolute;
+      position: relative;
       z-index: 1;
-    }
-
-    .card:nth-child(1) {
-      left: 0;
-      transform: scale(1);
-    }
-
-    .card:nth-child(2) {
-      left: 100px;
-      transform: scale(1.05);
-    }
-
-    .card:nth-child(3) {
-      left: 200px;
-      transform: scale(1.1);
     }
 
     .card img {
@@ -154,6 +162,39 @@
   </div>
 
   <h2>Conteúdo do Curso</h2>
+
+  <div class="carousel">
+    <div class="carousel-item">
+      <h3>Como Criar um Documento?</h3>
+      <p>5 aulas - 25 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Como Formatar um Documento?</h3>
+      <p>8 aulas - 48 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Como Deixar um Documento em Qualidade Final?</h3>
+      <p>7 aulas - 48 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Como Usar o Ambiente Matemático do LaTeX?</h3>
+      <p>4 aulas - 21 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Como Criar uma Bibliografia e Citações?</h3>
+      <p>4 aulas - 23 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Bônus: Como Criar Apresentações?</h3>
+      <p>2 aulas - 20 minutos</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Bônus: Como Personalizar o TexStudio?</h3>
+      <p>9 aulas - 31 minutos</p>
+    </div>
+  </div>
+
+  <h2>Modelos de Documentos</h2>
 
   <div class="cards-container">
     <div class="card">
