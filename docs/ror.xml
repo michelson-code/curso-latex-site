@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://michelson-code.github.io/curso-latex/</title>
+  <link>https://michelson-code.github.io/curso-latex/</link>
+
+<item>
+     <link>https://michelson-code.github.io/curso-latex/</link>
+     <title>Do Word ao LaTeX sem Sofrer</title>
+     <description>Aprenda a criar documentos profissionais no LaTeX com o curso 'Do Word ao LaTeX sem Sofrer'. Ideal para iniciantes!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
