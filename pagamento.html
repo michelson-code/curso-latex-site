@@ -38,6 +38,11 @@
     .payment-info p {
       margin-bottom: 20px;
     }
+    .cho-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
     .confirmation-btn {
       display: inline-block;
       margin-top: 30px;
@@ -58,6 +63,7 @@
       padding: 20px;
       background: #0f9d58;
       color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -70,7 +76,7 @@
   <div class="payment-info">
     <h2>Finalize sua compra!</h2>
     <p>Para realizar o pagamento, clique no botão abaixo para usar o Mercado Pago.</p>
-    <p>Após realizar o pagamento, clique no botão "Confirmar Pagamento" para concluir o processo.</p>
+    <p>Após o pagamento ser aprovado, o botão "Confirmar Pagamento" será liberado automaticamente.</p>
 
     <!-- Botão do Mercado Pago -->
     <div class="cho-container"></div>
@@ -91,28 +97,27 @@
 
     mp.checkout({
       preference: {
-        id: '2410853434-384ee163-7513-4769-8e1b-b0b7d00b0289' // ID da preferência criada
+        id: '2410853434-3d7a9b71-5b06-4c02-9332-0dd240f27a02' // ID novo da preferência
       },
       render: {
-        container: '.cho-container', // Classe onde o botão será renderizado
-        label: 'Pagar com Mercado Pago', // Texto do botão
+        container: '.cho-container',
+        label: 'Pagar com Mercado Pago',
       }
     });
 
     function confirmPayment() {
-      // Simula o processo de confirmação do pagamento
       alert("Pagamento confirmado! Redirecionando para o Discord...");
-
-      // Redireciona para o canal do Discord
-      window.location.href = "https://discord.com/invite/seu-canal";  // Altere com o link do seu canal no Discord
+      window.location.href = "https://discord.com/invite/seu-canal";  // Substitua pelo link correto do seu Discord
     }
 
-    function enableConfirmButton() {
-      document.getElementById("confirmPaymentBtn").disabled = false;
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paymentStatus = urlParams.get('status');
+      
+      if (paymentStatus === 'approved') {
+        document.getElementById("confirmPaymentBtn").disabled = false;
+      }
     }
-
-    // Simulação: após 30 segundos (exemplo), "o pagamento foi processado"
-    setTimeout(enableConfirmButton, 30000);
   </script>
 
 </body>
