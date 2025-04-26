@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Favicon Adicionado -->
   <link rel="icon" type="image/x-icon" href="favicon_custom.ico">
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento via Pix</title>
+  <title>Pagamento via Mercado Pago</title>
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
@@ -39,13 +38,6 @@
     .payment-info p {
       margin-bottom: 20px;
     }
-    .qr-code {
-      margin-top: 30px;
-    }
-    .qr-code img {
-      width: 200px;
-      height: 200px;
-    }
     .confirmation-btn {
       display: inline-block;
       margin-top: 30px;
@@ -72,20 +64,16 @@
 <body>
 
   <header>
-    <h1>Pagamento via Pix</h1>
+    <h1>Pagamento do Curso de LaTeX</h1>
   </header>
 
   <div class="payment-info">
     <h2>Finalize sua compra!</h2>
-    <p>Para realizar o pagamento, basta realizar a transferência via Pix. Abaixo está o QR Code para facilitar seu pagamento.</p>
+    <p>Para realizar o pagamento, clique no botão abaixo para usar o Mercado Pago.</p>
     <p>Após realizar o pagamento, clique no botão "Confirmar Pagamento" para concluir o processo.</p>
 
-    <!-- Exemplo de QR Code (substitua com seu QR Code real) -->
-    <div class="qr-code">
-      <img src="https://michelson-code.github.io/curso-latex-site/QR-curso-LaTeX.png" alt="QR Code Pix">
-    </div>
-
-    <p>Chave Pix: <strong>96c8f4ce-73ba-484c-9085-ce2ca078efed</strong></p>
+    <!-- Botão do Mercado Pago -->
+    <div class="cho-container"></div>
 
     <!-- Botão de confirmação desabilitado inicialmente -->
     <button id="confirmPaymentBtn" class="confirmation-btn" disabled onclick="confirmPayment()">Confirmar Pagamento</button>
@@ -95,7 +83,22 @@
     &copy; 2025 - Curso por Bruno Dantas | Powered by LaTeX & Overleaf
   </footer>
 
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
   <script>
+    const mp = new MercadoPago('APP_USR-1660481b-f799-407c-83d0-5abbcae4ed1a', {
+      locale: 'pt-BR'
+    });
+
+    mp.checkout({
+      preference: {
+        id: '2410853434-384ee163-7513-4769-8e1b-b0b7d00b0289' // ID da preferência criada
+      },
+      render: {
+        container: '.cho-container', // Classe onde o botão será renderizado
+        label: 'Pagar com Mercado Pago', // Texto do botão
+      }
+    });
+
     function confirmPayment() {
       // Simula o processo de confirmação do pagamento
       alert("Pagamento confirmado! Redirecionando para o Discord...");
@@ -104,13 +107,12 @@
       window.location.href = "https://discord.com/invite/seu-canal";  // Altere com o link do seu canal no Discord
     }
 
-    // Função que habilita o botão após a simulação do pagamento
     function enableConfirmButton() {
       document.getElementById("confirmPaymentBtn").disabled = false;
     }
 
     // Simulação: após 30 segundos (exemplo), "o pagamento foi processado"
-    setTimeout(enableConfirmButton, 30000); // Aqui simulamos que o pagamento foi confirmado após 30 segundos
+    setTimeout(enableConfirmButton, 30000);
   </script>
 
 </body>
