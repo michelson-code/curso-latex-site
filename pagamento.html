@@ -74,8 +74,9 @@
   </header>
 
   <div class="payment-info">
-    <h2>Finalize sua compra!</h2>
-    <p>Para realizar o pagamento, clique no botão abaixo para usar o Mercado Pago.</p>
+    <h2>Finalize sua compra de teste!</h2>
+    <p>Valor: <strong>R$ 0,01</strong></p>
+    <p>Clique no botão abaixo para pagar com Mercado Pago.</p>
     <p>Após o pagamento ser aprovado, o botão "Confirmar Pagamento" será liberado automaticamente.</p>
 
     <!-- Botão do Mercado Pago -->
@@ -97,17 +98,17 @@
 
     mp.checkout({
       preference: {
-        id: '2410853434-3d7a9b71-5b06-4c02-9332-0dd240f27a02' // ID novo da preferência
+        id: '2410853434-8d8d724f-d196-4c27-a05f-8b99ec5ca651' // ID da preferência para pagamento de 1 centavo
       },
       render: {
         container: '.cho-container',
-        label: 'Pagar com Mercado Pago',
+        label: 'Pagar R$ 0,01 com Mercado Pago',
       }
     });
 
     function confirmPayment() {
       alert("Pagamento confirmado! Redirecionando para o Discord...");
-      window.location.href = "https://discord.com/invite/seu-canal";  // Substitua pelo link correto do seu Discord
+      window.location.href = "https://discord.com/invite/seu-canal";  // Altere para o link real do seu Discord
     }
 
     window.onload = function() {
