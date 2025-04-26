@@ -74,8 +74,8 @@
   </header>
 
   <div class="payment-info">
-    <h2>Finalize sua compra de teste!</h2>
-    <p>Valor: <strong>R$ 0,01</strong></p>
+    <h2>Finalize sua compra!</h2>
+    <p>Valor: <strong>R$ 24,90</strong></p>
     <p>Clique no botão abaixo para pagar com Mercado Pago.</p>
     <p>Após o pagamento ser aprovado, o botão "Confirmar Pagamento" será liberado automaticamente.</p>
 
@@ -98,11 +98,11 @@
 
     mp.checkout({
       preference: {
-        id: '2410853434-54ae74af-aff2-4d4e-970f-f5ccabb0847d' // <-- Novo ID da preferência!
+        id: '2410853434-3d7a9b71-5b06-4c02-9332-0dd240f27a02' // ID da preferência real (R$ 24,90)
       },
       render: {
         container: '.cho-container',
-        label: 'Pagar R$ 0,01 com Mercado Pago',
+        label: 'Pagar com Mercado Pago',
       }
     });
 
