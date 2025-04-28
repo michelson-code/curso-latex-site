@@ -1,3 +1,4 @@
-Flask==2.1.1
+Flask
+smtplib
 Werkzeug==2.0.3  # Versão anterior do Werkzeug
 python-dotenv==0.19.0
