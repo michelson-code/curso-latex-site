@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 app = Flask(__name__)
 
-# Configurações do Gmail
-GMAIL_USER = 'seuemail@gmail.com'
-GMAIL_PASS = 'suasenhadeaplicativo'  # Não usar a senha normal, usa senha de app!
+# Configurações do Gmail (use variáveis de ambiente para segurança)
+GMAIL_USER = os.getenv('GMAIL_USER', 'seuemail@gmail.com')
+GMAIL_PASS = os.getenv('GMAIL_PASS', 'suasenhadeaplicativo')
 
 # Função para enviar o email
 def send_email(to_email):
@@ -29,11 +30,15 @@ def send_email(to_email):
     msg['From'] = GMAIL_USER
     msg['To'] = to_email
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(GMAIL_USER, GMAIL_PASS)
-    server.sendmail(GMAIL_USER, [to_email], msg.as_string())
-    server.quit()
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(GMAIL_USER, GMAIL_PASS)
+        server.sendmail(GMAIL_USER, [to_email], msg.as_string())
+        server.quit()
+        print(f'Email enviado para {to_email}')
+    except Exception as e:
+        print(f'Erro ao enviar email: {e}')
 
 # Endpoint para receber o webhook
 @app.route('/webhook', methods=['POST'])
@@ -41,22 +46,18 @@ def webhook():
     data = request.get_json()
     print('Recebido:', data)
 
-    # Verifica se é pagamento aprovado
-    if data.get('type') == 'payment':
+    # Verifica se o evento é um pagamento aprovado
+    if data.get('type') == 'payment' and data['data'].get('status') == 'approved':
         payment_id = data['data']['id']
 
-        # Aqui você consultaria a API do Mercado Pago para confirmar
-        # Para simplificar, vamos simular que o pagamento é aprovado
-        status = "approved"  # Ideal seria consultar!
+        # Pega o email do comprador da resposta do Mercado Pago
+        buyer_email = data['data']['payer']['email']  # Acessa o e-mail do comprador
 
-        # Pega o email do comprador (no mundo real, teria que consultar detalhes)
-        buyer_email = 'emaildopagador@example.com'  # << Aqui você buscaria real.
+        # Envia o email de confirmação
+        send_email(buyer_email)
+        return jsonify({'message': 'Email enviado'}), 200
 
-        if status == 'approved':
-            send_email(buyer_email)
-            return jsonify({'message': 'Email enviado'}), 200
-
-    return jsonify({'message': 'Webhook recebido'}), 200
+    return jsonify({'message': 'Webhook recebido, mas sem pagamento aprovado'}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
