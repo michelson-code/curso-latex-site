@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 
 # Configurações do Gmail (use variáveis de ambiente para segurança)
-GMAIL_USER = os.getenv('GMAIL_USER', 'seuemail@gmail.com')
-GMAIL_PASS = os.getenv('GMAIL_PASS', 'suasenhadeaplicativo')
+GMAIL_USER = 'michelson.geofisica@gmail.com'
+GMAIL_PASS =  '3353A14YK27'
 
 # Função para enviar o email
 def send_email(to_email):
