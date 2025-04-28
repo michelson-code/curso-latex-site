@@ -2,23 +2,70 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Pagamento Recusado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erro no Pagamento</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: #ffebee;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 50px;
+      color: #333;
     }
-    h1 {
-      color: #c62828;
+    header {
+      background-color: #d32f2f;
+      color: white;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .message {
+      margin: 30px;
+      font-size: 1.5rem;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .message h2 {
+      color: #d32f2f;
+    }
+    footer {
+      padding: 20px;
+      background-color: #d32f2f;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <h1>Pagamento Não Aprovado ❌</h1>
-  <p>Infelizmente, não conseguimos aprovar o seu pagamento. Tente novamente ou use outro método.</p>
+  <header>
+    <h1>Erro no Pagamento</h1>
+  </header>
+
+  <div class="message">
+    <h2>Infelizmente, houve um erro no seu pagamento.</h2>
+    <p>Por favor, tente novamente ou entre em contato conosco para mais informações.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 - Curso por Bruno Dantas
+  </footer>
+
+  <script>
+    // Verificar o parâmetro de status na URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    
+    if (status && status === 'error') {
+      document.querySelector('.message h2').innerText = "O pagamento não foi processado corretamente.";
+    } else {
+      document.querySelector('.message h2').innerText = "Ocorreu um erro inesperado.";
+    }
+  </script>
 
 </body>
 </html>
