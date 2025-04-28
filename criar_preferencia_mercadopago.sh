@@ -11,9 +11,9 @@ curl --location --request POST 'https://api.mercadopago.com/checkout/preferences
     }
   ],
   "back_urls": {
-    "success": "https://michelson-code.github.io/curso-latex-site/pagamento-sucesso.html",
-    "pending": "https://michelson-code.github.io/curso-latex-site/pagamento-pendente.html",
-    "failure": "https://michelson-code.github.io/curso-latex-site/pagamento-erro.html"
+    "success": "https://michelson-code.github.io/curso-latex/pagamento-sucesso.html",
+    "pending": "https://michelson-code.github.io/curso-latex/pagamento-pendente.html",
+    "failure": "https://michelson-code.github.io/curso-latex/pagamento-erro.html"
   },
   "auto_return": "approved"
 }'
