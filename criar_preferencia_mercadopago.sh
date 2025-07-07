@@ -7,7 +7,7 @@ curl --location --request POST 'https://api.mercadopago.com/checkout/preferences
       "title": "Curso de LaTeX",
       "quantity": 1,
       "currency_id": "BRL",
-      "unit_price": 24.90
+      "unit_price": 25.25
     }
   ],
   "back_urls": {
